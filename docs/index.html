@@ -47,7 +47,7 @@
   
   function postMessageToAndroid(postData) {   
     alert(postData);
-    window.PostCode.postMessage(postData);
+    window.PostCode.postMessage(postData.postcode, postData.zonecode, postData.addr);
   };
   
   function postMessageToiOS(postData) {
