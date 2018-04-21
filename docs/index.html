@@ -102,10 +102,10 @@
         
         
         var paramValue = request.getParameter('os');  
-        if(paramValue === 'ios'){
+        if(paramValue == 'ios'){
           window.postMessageToiOS(postData);
         }
-        else if(paramValue === 'android'){          
+        else if(paramValue == 'android'){          
           alert(postData);
           window.postMessageToAndroid(postData);
         }
