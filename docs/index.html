@@ -45,11 +45,6 @@
     console.log("onReceivedActivityMessageViaJavascriptInterface "+event);
   };
   
-  function postMessageToAndroid(postData) {   
-    alert(postData.postcode);
-    
-  };
-  
   function postMessageToiOS(postData) {
       window.webkit.messageHandlers.callBackHandler.postMessage(postData);
   };
@@ -99,16 +94,14 @@
             postcode : data.postcode,
             zonecode : data.zonecode,
             addr : fullRoadAddr
-        };
-        
+        };        
         
         var paramValue = request.getParameter('os');  
         if(paramValue == 'ios'){
           window.postMessageToiOS(postData);
         }
         else if(paramValue == 'android'){       
-          window.PostCode.postMessage(data.postcode, data.zonecode, fullRoadAddr);
-          // postMessageToAndroid(postData);
+          window.PostCode.postMessage(data.zonecode, fullRoadAddr);
         }
       },
       width : '100%',
