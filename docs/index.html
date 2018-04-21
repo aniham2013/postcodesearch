@@ -10,23 +10,6 @@
 
 <script src="https://spi.maps.daum.net/imap/map_js_init/postcode.v2.js"></script>
 <script>
-   var Request = function() {  
-        this.getParameter = function(name) {  
-            var rtnval = '';  
-            var nowAddress = unescape(location.href);  
-            var parameters = (nowAddress.slice(nowAddress.indexOf('?') + 1,  
-                    nowAddress.length)).split('&');  
-            for (var i = 0; i < parameters.length; i++) {  
-                var varName = parameters[i].split('=')[0];  
-                if (varName.toUpperCase() == name.toUpperCase()) {  
-                    rtnval = parameters[i].split('=')[1];  
-                    break;  
-                }  
-            }  
-            return rtnval;  
-        }  
-    }  
-  var request = new Request();  
   
   window.addEventListener("message", onReceivedPostMessage, false);
   
@@ -94,15 +77,9 @@
             postcode : data.postcode,
             zonecode : data.zonecode,
             addr : fullRoadAddr
-        };        
+        };
         
-        var paramValue = request.getParameter('os');  
-        if(paramValue == 'ios'){
-          window.postMessageToiOS(postData);
-        }
-        else if(paramValue == 'android'){       
-          window.PostCode.postMessage(data.zonecode, fullRoadAddr);
-        }
+        window.postMessageToiOS(postData);
       },
       width : '100%',
       height : '100%'
