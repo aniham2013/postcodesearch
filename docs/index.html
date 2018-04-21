@@ -47,7 +47,7 @@
   
   function postMessageToAndroid(postData) {   
     alert(postData.postcode);
-    window.PostCode.postMessage(postData.postcode, postData.zonecode, postData.addr);
+    
   };
   
   function postMessageToiOS(postData) {
@@ -107,7 +107,8 @@
           window.postMessageToiOS(postData);
         }
         else if(paramValue == 'android'){       
-          postMessageToAndroid(postData);
+          window.PostCode.postMessage(data.postcode, data.zonecode, fullRoadAddr);
+          // postMessageToAndroid(postData);
         }
       },
       width : '100%',
