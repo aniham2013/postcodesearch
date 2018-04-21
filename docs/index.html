@@ -46,7 +46,7 @@
   };
   
   function postMessageToAndroid(postData) {   
-    alert(postData);
+    alert(postData.postcode);
     window.PostCode.postMessage(postData.postcode, postData.zonecode, postData.addr);
   };
   
