@@ -45,7 +45,8 @@
     console.log("onReceivedActivityMessageViaJavascriptInterface "+event);
   };
   
-  function postMessageToAndroid(postData) {
+  function postMessageToAndroid(postData) {   
+    alert(postData);
     window.PostCode.postMessage(postData);
   };
   
@@ -105,9 +106,8 @@
         if(paramValue == 'ios'){
           window.postMessageToiOS(postData);
         }
-        else if(paramValue == 'android'){          
-          alert(postData);
-          window.postMessageToAndroid(postData);
+        else if(paramValue == 'android'){       
+          postMessageToAndroid(postData);
         }
       },
       width : '100%',
