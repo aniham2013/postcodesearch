@@ -109,8 +109,9 @@
       height : '100%'
     }).embed(element_layer);
     
-    alert(paramValue);
-    if(paramValue == 'ios'){
+    var param = request.getParameter('os');  
+    alert(param);
+    if(param == 'ios'){
       element_layer.style.display = 'block';
       initLayerPosition();
     }
