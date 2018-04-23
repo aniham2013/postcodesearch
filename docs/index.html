@@ -100,6 +100,9 @@
         alert(paramValue);
         if(paramValue == 'ios'){
           window.postMessageToiOS(postData);
+          
+          element_layer.style.display = 'block';
+          initLayerPosition();
         }
         else if(paramValue == 'android'){       
           window.PostCode.postMessage(data.zonecode, fullRoadAddr);
@@ -108,8 +111,6 @@
       width : '100%',
       height : '100%'
     }).embed(element_layer);
-    element_layer.style.display = 'block';
-    initLayerPosition();
   }
   
   function initLayerPosition(){
