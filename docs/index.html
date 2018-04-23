@@ -109,13 +109,13 @@
       height : '100%'
     }).embed(element_layer);
     
-    element_layer.style.display = 'block';
     
     var param = request.getParameter('os');  
     alert(param);
-    if(param == 'ios'){
-      initLayerPosition();
-    }
+    //if(param == 'ios'){
+    element_layer.style.display = 'block';
+    initLayerPosition();
+    //}
   }
   
   function initLayerPosition(){
