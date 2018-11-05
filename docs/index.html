@@ -99,9 +99,11 @@
         var paramValue = request.getParameter('os');  
         alert(paramValue);
         if(paramValue == 'ios'){
+          alert(paramValue);
           window.postMessageToiOS(postData);
         }
-        else if(paramValue == 'android'){       
+        else if(paramValue == 'android'){     
+          alert(paramValue);  
           window.PostCode.postMessage(data.zonecode, fullRoadAddr);
         }
       },
